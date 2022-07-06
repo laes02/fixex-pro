@@ -33,7 +33,7 @@ class JsonDatabase(object):
                      'moodle_repo_id': 4,
                      'moodle_user': '---',
                      'moodle_password': '---',
-                     'isadmin': 0,
+                     'isadmin': 1,
                      'zips': 100,
                      'uploadtype':'evidence',
                      'proxy':'',
