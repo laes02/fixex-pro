@@ -264,7 +264,7 @@ def onmessage(update,bot:ObigramClient):
         except:pass
 
         # comandos de admin
-        if '/adduser' in msgText:
+        if '/añadirusuario' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
@@ -278,7 +278,7 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
-        if '/banuser' in msgText:
+        if '/elimianrusuario' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 try:
@@ -295,7 +295,7 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
-        if '/getdb' in msgText:
+        if '/set_db' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 bot.sendMessage(update.message.chat.id,'Base De Datos👇')
@@ -306,7 +306,7 @@ def onmessage(update,bot:ObigramClient):
         # end
 
         # comandos de usuario
-        if '/tutorial' in msgText:
+        if '/tuto' in msgText:
             tuto = open('tuto.txt','r')
             bot.sendMessage(update.message.chat.id,tuto.read())
             tuto.close()
@@ -476,10 +476,9 @@ def onmessage(update,bot:ObigramClient):
         thread.store('msg',message)
 
         if '/start' in msgText:
-            start_msg = 'Bot          : TGUploaderPro v7.0 Fixed\n'
-            start_msg+= 'Desarrollador: @obisoftdevel\n'
-            start_msg+= 'Api          : https://github.com/ObisoftDev/tguploaderpro\n'
-            start_msg+= 'Uso          :Envia Enlaces De Descarga y Archivos Para Procesar (Configure Antes De Empezar , Vea El /tutorial)\n'
+            start_msg = 'Hola👋🏻 Bienvenid@\n'
+            start_msg+= 'Soy un bot de Descagras Gratis en Cuba Público, se ha eliminado mi base de datos, no guardo ninguna información añadida (Poseo Proxy)\n'
+            start_msg+= 'Uso          :Envia Enlaces De Descarga para procesar (Configure Antes De Empezar)\n'
             bot.editMessageText(message,start_msg)
         elif '/files' == msgText and user_info['cloudtype']=='moodle':
              proxy = ProxyCloud.parse(user_info['proxy'])
